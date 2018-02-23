@@ -17,11 +17,11 @@ To complete this project, students should have the following:
 
 HTML | Description
 -----| -----------
-<form> | An element that defines a form to collect user input. Contains form elements.
-<input> | An element that obtains information from the user. Can have different types.
-<input type="text" | Defines a one-line text input field.
-<input type="radio" | Defines a radio button.
-<input type="submit" | Defines a submit button.
+form | An element that defines a form to collect user input. Contains form elements.
+input | An element that obtains information from the user. Can have different types.
+input type="text" | Defines a one-line text input field.
+input type="radio" | Defines a radio button.
+input type="submit" | Defines a submit button.
 
 JS | Description
 ---| -----------
