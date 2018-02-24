@@ -1,0 +1,81 @@
+body{
+	margin: 0px;
+}
+
+#container{
+	width: calc(100vw);
+	height: calc(100vh);
+}
+
+#form{
+	width: 30%;
+	height: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#form-mask{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+h1{
+	font-size: 18px;
+}
+
+h2{
+	font-size: 16px;
+}
+
+input{
+	border-radius: 3px;
+	margin-left: 10px;
+}
+
+.field-container{
+	display: flex;
+	flex-direction: row;
+	height: 30px;
+}
+
+
+#other-container{
+	width: calc(100vw);
+	height: calc(100vh);
+	display: flex;
+	flex-direction: row;
+	background-color: LightCyan;
+}
+
+#toDo-container{
+	background-color: LightCoral;
+	height: calc(100vh);
+	width: calc(25vw);
+}
+
+#list{
+	background-color: LightGreen;
+}
+
+#note-container{
+	background-color: LightSkyBlue;
+	height: calc(100vh);
+	width: calc(75vw);
+}
+
+.thing-toDo{
+	height: 90%;
+	width: 90%;
+}
+
+.toDo-div{
+	height: 50px;
+	width: 100%;
+	background-color: blue;
+}
