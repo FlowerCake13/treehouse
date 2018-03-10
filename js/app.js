@@ -1,9 +1,42 @@
+var noteContainer = document.getElementById('note-container');
+var cords = document.createElement('p');
+let x;
+let y;
+noteContainer.addEventListener('mousemove', function(){
+	x = event.clientX;
+	y = event.clientY;
+	cords.innerHTML = 'x: ' + x + ' y: ' + y;
+	console.log('x: ' + x + ' y: ' + y)
+});
+
+function drag(e) {
+	e.dataTransfer.setData('text', e.target.id);
+}
+
+function allowDrop(e){
+	e.preventDefault();
+}
+
+function drop(e) {
+	var data = e.dataTransfer.getData('text');
+	var item = document.getElementById(data);
+	console.log(item)
+	console.log(y)
+	e.target.appendChild(item);
+	console.log(item.style.top)
+	item.style.left = x + 'px';
+	item.style.top = y + 'px';
+	console.log(y)
+	console.log(item.style.top)
+}
+
 window.onload = function(){
 	var username = document.getElementById('username');
 	var password = document.getElementById('password');
 	var form = document.getElementById('form');
 	var mask = document.getElementById('form-mask');
 	form.onsubmit = function(){
+		console.log('stuff')
 		if (username.value == 'test' && password.value == 'test') {
 			form.style.display = 'none';
 			mask.style.display = 'none';
@@ -51,28 +84,24 @@ window.onload = function(){
 		}, false)	
 	}
 
+	var counter = 0;
+
 	function postItCreate(){		
-		var noteContainer = document.getElementById('note-container');
-		var cords = document.createElement('p');
 		noteContainer.appendChild(cords)
-		let x;
-		let y;
-		noteContainer.addEventListener('mousemove', function(){
-			x = event.clientX;
-			y = event.clientY;
-			cords.innerHTML = 'x: ' + x + ' y: ' + y;
-		});
-		
 		noteContainer.addEventListener('click', function(){
 			var sticky = document.createElement('div');
 			sticky.setAttribute('class', 'sticky location');
 			var stickInput = document.createElement('input');
-			stickInput.setAttribute('class', 'stickyInput location');
+			stickInput.setAttribute('class', 'location');
+			sticky.setAttribute('id', counter);
+			counter++;
+			sticky.setAttribute('draggable', 'true');
+			sticky.setAttribute('ondragstart', 'drag(event)');
 
 			sticky.style.left = x + 'px';
-			stickInput.style.left = x + 'px';
+			//stickInput.style.left = x + 'px';
 			sticky.style.top = y + 'px';
-			stickInput.style.top = y + 'px';
+			//stickInput.style.top = y + 'px';
 
 			sticky.appendChild(stickInput);
 			noteContainer.appendChild(sticky)
